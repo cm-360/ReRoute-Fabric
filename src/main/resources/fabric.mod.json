@@ -1,29 +1,38 @@
 {
   "schemaVersion": 1,
-  "id": "modid",
+  "id": "reroute",
   "version": "${version}",
 
-  "name": "Example Mod",
-  "description": "This is an example description! Tell everyone what your mod is about!",
+  "name": "ReRoute-Fabric",
+  "description": "Allows a modded client to be sent directly to the correct server on a BungeeCord network.",
   "authors": [
-    "Me!"
+    {
+	  "name": "CM360",
+      "contact": {
+	    "homepage": "https://github.com/cm-360"
+      }
+    }
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-example-mod"
+    "homepage": "https://github.com/cm-360/ReRoute-Fabric",
+    "issues": "https://github.com/cm-360/ReRoute-Fabric/issues",
+    "sources": "https://github.com/cm-360/ReRoute-Fabric"
   },
 
   "license": "CC0-1.0",
-  "icon": "assets/modid/icon.png",
+  "icon": "assets/reroute/icon.png",
 
   "environment": "*",
   "entrypoints": {
-    "main": [
-      "net.fabricmc.example.ExampleMod"
+    "client": [
+      "com.github.cm360.reroute.fabric.ReRouteClientMod"
+    ],
+    "modmenu": [
+      "com.github.cm360.reroute.fabric.config.ReRouteConfigScreen"
     ]
   },
   "mixins": [
-    "modid.mixins.json"
+    "reroute.mixins.json"
   ],
 
   "depends": {
@@ -31,8 +40,5 @@
     "fabric": "*",
     "minecraft": "1.18.x",
     "java": ">=17"
-  },
-  "suggests": {
-    "another-mod": "*"
   }
 }
